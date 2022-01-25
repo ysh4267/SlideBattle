@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Obstacle
   - Enemy
+  - Pillar
+  - ProtectZone
+  - Hole
+  - Oil
   layers:
   - Default
   - TransparentFX

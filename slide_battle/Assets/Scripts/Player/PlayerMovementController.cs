@@ -13,6 +13,7 @@ public class PlayerMovementController : MonoBehaviour {
     Vector3 touchEndPosition;
     Vector3 directionVector;
 
+    public float curveSpeedDivider;
 
     private void Start() {
         currentStatus = EnumPlayerStatus.IDLE;
@@ -20,7 +21,12 @@ public class PlayerMovementController : MonoBehaviour {
         directionVector = new Vector3(0, 0, 0);
     }
 
+    public void SetCharacterStatus(EnumPlayerStatus newStatus) {
+        currentStatus = newStatus;
+    }
+
     private void Update() {
+        if(currentStatus!= EnumPlayerStatus.OIL_SLIP)
         TryGetPlayerInput();
     }
     private void FixedUpdate() {
@@ -34,6 +40,9 @@ public class PlayerMovementController : MonoBehaviour {
                 break;
             case EnumPlayerStatus.REFLECTED_BY_OBSTACLE:
                 SlowDownPlayer();
+                break;
+            case EnumPlayerStatus.OIL_SLIP:
+                AddForceToPlayer();
                 break;
             default:
                 break;
@@ -71,29 +80,39 @@ public class PlayerMovementController : MonoBehaviour {
                 directionVector = (touchEndPosition - touchStartPosition).normalized;
                 directionVector.z = directionVector.y;
                 directionVector.y = 0.0f;
+
+                rigidbody.velocity *= curveSpeedDivider;
             }
         }
     }
+
+
 
     void ReflectByObstacle(Collision collision) {
         Vector3 collisionPoint = collision.contacts[0].point;
         Vector3 objectPosition = collision.gameObject.transform.position;
 
-        directionVector = Vector3.Reflect(collision.relativeVelocity.normalized, (collisionPoint - objectPosition).normalized) * -1;
+        directionVector = Vector3.Reflect(collision.relativeVelocity.normalized, (collisionPoint - objectPosition).normalized)* -1;
+        directionVector.y = 0;
         float remainPower = collision.relativeVelocity.magnitude / directionVector.magnitude;
         rigidbody.velocity = directionVector * remainPower;
-        directionVector.y = 0;
 
         currentStatus = EnumPlayerStatus.REFLECTED_BY_OBSTACLE;
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Obstacle") {
-            ReflectByObstacle(collision);
+        switch (collision.gameObject.tag) {
+            case "Pillar":
+                Debug.Log("player pillar!");
+                ReflectByObstacle(collision);
+                break;
+            case "Enemy":
+                break;
+            case "Hole":
+                Destroy(gameObject);
+                break;
         }
-        else if(collision.gameObject.tag == "Enemy") {
 
-        }
     }
 
 }

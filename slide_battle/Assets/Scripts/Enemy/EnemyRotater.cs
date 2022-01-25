@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyObstacleAvoid : MonoBehaviour {
+public class EnemyRotater : MonoBehaviour {
     public float rotationSpeed = 10.0f;
     public float minimumDistToAvoid = 20.0f;
-
-    [SerializeField] GameObject target;
+    public GameObject target;
 
     private void Start() {
         target = GameObject.Find("ProtectArea");
     }
 
     private void Update() {
-
         Vector3 dir = (target.transform.position - transform.position);
+
         dir.Normalize();
+        dir.y = 0;
         AvoidObstacles(ref dir);
         
         var rotation = Quaternion.LookRotation(dir);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        
     }
 
     public void AvoidObstacles(ref Vector3 dir) {

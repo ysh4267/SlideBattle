@@ -6,6 +6,8 @@ public enum EnumEnemyStatus
 {
     STOP,
     MOVE,
-    COLLIDE_BY_OTHER,
-    COLLIDE_WITH_ENEMY
+    COLLIDE_WITH_PLAYER,
+    BOUNCE,
+    COLLIDE_WITH_ENEMY,
+    COLLIDE_WITH_PILLAR
 }
