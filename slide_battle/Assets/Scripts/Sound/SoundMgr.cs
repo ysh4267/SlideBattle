@@ -5,29 +5,47 @@ using UnityEngine.UI;
 
 public class SoundMgr : MonoBehaviour
 {
-    public Slider Bgmslider;
-    public AudioSource Bgm;
+    [SerializeField] Toggle BgmToggle;
+    [SerializeField] Toggle SoundToggle;
 
-    private float BgmVol = 1f;
+    public AudioSource Bgm;
+    public AudioSource EffectSound;
 
     void Start()
     {
-        BgmVol = PlayerPrefs.GetFloat("BgmVolKey", 1f);
-        Bgmslider.value = BgmVol;
-        Bgm.volume = Bgmslider.value;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ToggleBgm(bool audioIn)
     {
-        SoundSlider();
+        if (audioIn)
+        {
+            Bgm.volume = 1;
+        }
+        else 
+        {
+            Bgm.volume = 0;
+        }
     }
 
-    public void SoundSlider()
+    public void ToggleSound(bool audioIn)
     {
-        Bgm.volume = Bgmslider.value;
-
-        BgmVol = Bgmslider.value;
-        PlayerPrefs.SetFloat("BgmVolKey", BgmVol);
+        if (audioIn)
+        {
+            EffectSound.volume = 1;
+        }
+        else
+        {
+            EffectSound.volume = 0;
+        }
     }
+
+    private void Update()
+    {
+        if (BgmToggle.isOn)
+            Bgm.volume = 1;
+
+        if (SoundToggle.isOn)
+            EffectSound.volume = 1;
+    }
+
 }
