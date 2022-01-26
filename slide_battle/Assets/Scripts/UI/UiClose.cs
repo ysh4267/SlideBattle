@@ -9,7 +9,6 @@ public class UiClose : MonoBehaviour
     [SerializeField] GameObject ClearPanel;
     [SerializeField] GameObject FailtPanel;
     [SerializeField] GameObject TutorialPanel;
-    [SerializeField] GameObject SettingPanel;
     [SerializeField] GameObject FadeEffect;
 
 
@@ -32,17 +31,6 @@ public class UiClose : MonoBehaviour
     {
         TutorialPanel.SetActive(false);
     }
-
-    //설정 패널
-    public void ACtiveSetting()
-    {
-        SettingPanel.SetActive(true);
-    }
-    public void CloseSetting()
-    {
-        SettingPanel.SetActive(false);
-    }
-
     //클리어 패널
     public void ACtiveClear()
     {
