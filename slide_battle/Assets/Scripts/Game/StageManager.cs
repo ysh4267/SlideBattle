@@ -9,15 +9,20 @@ public class StageManager : Singleton<StageManager>
     ObjectSpawner[] spawners;
 
     private void Start() {
-        currentLevel = 1;
-        currentStage =  GetProperStageSet(currentLevel);
-        spawners = GetComponents<ObjectSpawner>();
-        SetUpSpawners();
+        Initialize();
     }
     
     public void LevelUpStage() {
         currentLevel += 1;
         currentStage = GetProperStageSet(currentLevel);
+        SetUpSpawners();
+    }
+
+    private void Initialize() {
+        currentLevel = 1;
+        currentStage = GetProperStageSet(currentLevel);
+        spawners = GetComponents<ObjectSpawner>();
+        SetUpSpawners();
     }
 
     public void SetUpSpawners() {
@@ -38,16 +43,25 @@ public class StageManager : Singleton<StageManager>
                 default:
                     break;
             }
-
+            spawner.InitializeThisSpawner();
         }
     }
 
     private StageSetData GetProperStageSet(int currentLevel) {
-        List<StageSetData> stageSet = StageSetDataContainer.GetInstance().GetStageSetClone();
-
+        List<StageSetData> stageSet = StageSetDataContainer.GetInstance().stageSet;
         foreach(StageSetData stageSetData in stageSet) {
             if(isStageSetContainsCurrentLevel(currentLevel, stageSetData)) {
-                return stageSetData;
+                StageSetData clone = new StageSetData();
+
+                clone.stageSetLevel = stageSetData.stageSetLevel;
+                clone.givenPlayerHp = stageSetData.givenPlayerHp;
+                clone.stageRange = stageSetData.stageRange;
+                clone.enemySpawnerSetting = stageSetData.enemySpawnerSetting;
+                clone.oilSpawnerSetting =stageSetData.oilSpawnerSetting;
+                clone.pillarSpawnerSetting =stageSetData.pillarSpawnerSetting;
+                clone.holeSpawnerSetting = stageSetData.holeSpawnerSetting;
+
+                return clone;
             }
         }
 

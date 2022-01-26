@@ -8,8 +8,7 @@ public class ObjectSpawner : MonoBehaviour {
     int spawnedObjectCount;
 
     private void Start() {
-        timeChecker = 0.0f;
-        spawnedObjectCount = 0;
+        InitializeThisSpawner();
     }
 
     private void Update() {
@@ -23,7 +22,8 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     public void InitializeThisSpawner() {
-        
+        timeChecker = 0.0f;
+        spawnedObjectCount = 0;
     }
 
     private List<Vector3> GetSpawnPositionList() {
