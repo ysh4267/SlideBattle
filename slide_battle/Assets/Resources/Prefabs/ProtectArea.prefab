@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8972334800681620201}
   - component: {fileID: 7964901219601585975}
   - component: {fileID: 4909914799179694217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProtectArea
-  m_TagString: Untagged
+  m_TagString: ProtectZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5749913256805904160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.09, z: 0}
-  m_LocalScale: {x: 20.371, y: 1, z: 20.371}
+  m_LocalScale: {x: 19.707, y: 19.707, z: 19.707}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5749913256805904160}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 8245426573784773463, guid: 8112d10d055ec2a4ba06578ba03b5a84, type: 3}
 --- !u!23 &7964901219601585975
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,9 +90,9 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5749913256805904160}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Radius: 0.19681445
+  m_Height: 0.7981946
+  m_Direction: 2
+  m_Center: {x: 0.000000048392668, y: -0.008671785, z: -0.028133223}

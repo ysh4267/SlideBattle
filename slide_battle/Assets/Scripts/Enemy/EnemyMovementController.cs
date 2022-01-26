@@ -18,10 +18,10 @@ public class EnemyMovementController : MonoBehaviour {
     }
 
     private void Update() {
-        float x= transform.rotation.x;
-        float z = transform.rotation.z;
-        Quaternion newrotation = new Quaternion(x,transform.rotation.y,z,transform.rotation.w);
-        transform.rotation = newrotation;
+       float x= transform.rotation.x;
+       float z = transform.rotation.z;
+       Quaternion newrotation = new Quaternion(x,transform.rotation.y,z,transform.rotation.w);
+       transform.rotation = newrotation;
     }
 
     private void FixedUpdate() {
@@ -43,7 +43,7 @@ public class EnemyMovementController : MonoBehaviour {
                 break;
             case EnumEnemyStatus.STOP:
                 StopThisObject();
-                SetWalkingAnimation();
+                //SetWalkingAnimation();
                 break;
             default:
                 break;
@@ -62,7 +62,7 @@ public class EnemyMovementController : MonoBehaviour {
     private void CollideEnemyToEnemy() {
         Vector3 velocity = latestCollision.relativeVelocity;
         velocity.y = 0;
-        rigidbody.velocity = velocity;
+        rigidbody.AddRelativeForce(velocity);
         currentStatus = EnumEnemyStatus.BOUNCE;
     } 
     private void CollideEnemyToPillar() {
@@ -108,7 +108,7 @@ public class EnemyMovementController : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player") {
             currentStatus = EnumEnemyStatus.COLLIDE_WITH_PLAYER;
-            SetFlyingAnimation();
+            //SetFlyingAnimation();
             CollidePlayerToEnemy();
         }
         else if (collision.gameObject.tag == "Enemy") {
@@ -117,7 +117,7 @@ public class EnemyMovementController : MonoBehaviour {
             }
             else{
                 currentStatus = EnumEnemyStatus.COLLIDE_WITH_ENEMY;
-                SetFlyingAnimation();
+                //SetFlyingAnimation();
             }
         }
          else if(collision.gameObject.tag == "Pillar") {

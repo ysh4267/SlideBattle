@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour {
-    [SerializeField] float spawnTimeInterval;
-    [SerializeField] int objectSpawnCountAtSameTime;//스폰 타이밍에 동시에 소환 가능한 오브젝트 수
-    [SerializeField] int totalObjectSpawnCount;//해당 스테이지에서 소환할 해당 오브젝트 수
-    [SerializeField] List<Transform> spawnPositionList;
-    [SerializeField] GameObject objectPrefab;
-
+    public SpawnerSetting spawnerSetting;
     float timeChecker;
     int spawnedObjectCount;
 
     private void Start() {
         timeChecker = 0.0f;
+        spawnedObjectCount = 0;
     }
 
     private void Update() {
-        if (spawnedObjectCount >= totalObjectSpawnCount) return;
+        if (spawnedObjectCount >= spawnerSetting.totalObjectSpawnCount) return;
 
         timeChecker += Time.deltaTime;
-        if (timeChecker >= spawnTimeInterval) {
+        if (timeChecker >= spawnerSetting.spawnTimeInterval) {
             timeChecker = 0.0f;
-            SpawnEnemy(objectSpawnCountAtSameTime);
+            SpawnEnemy(spawnerSetting.objectSpawnCountAtSameTime);
         }
+    }
+
+    public void InitializeThisSpawner() {
+        
     }
 
     private List<Vector3> GetSpawnPositionList() {
         List<int> positionList = new List<int>();
-        while (!(positionList.Count == objectSpawnCountAtSameTime)) {
-            int randomNumber = Random.Range(0, spawnPositionList.Count);
+        while (!(positionList.Count == spawnerSetting.objectSpawnCountAtSameTime)) {
+            int randomNumber = Random.Range(0, spawnerSetting.spawnPositionList.Count);
             if (!positionList.Contains(randomNumber)) {
                 positionList.Add(randomNumber);
             }
@@ -37,7 +37,7 @@ public class ObjectSpawner : MonoBehaviour {
         List<Vector3> resultList = new List<Vector3>();
         foreach(int posIndex in positionList) {
 
-            resultList.Add(spawnPositionList[posIndex].position);
+            resultList.Add(spawnerSetting.spawnPositionList[posIndex].position);
         }
         return resultList;
     }
@@ -46,9 +46,9 @@ public class ObjectSpawner : MonoBehaviour {
     private void SpawnEnemy(int count) {
         List<Vector3> spawnPositionList = GetSpawnPositionList();
         for (int i = 0; i < count; i++) {
-            if (spawnedObjectCount >= totalObjectSpawnCount) { return; }
+            if (spawnedObjectCount >= spawnerSetting.totalObjectSpawnCount) { return; }
 
-            GameObject enemy = Instantiate<GameObject>(objectPrefab, spawnPositionList[i], objectPrefab.transform.rotation);
+            GameObject enemy = Instantiate<GameObject>(spawnerSetting.objectPrefab, spawnPositionList[i], Quaternion.identity);
             enemy.transform.position = spawnPositionList[i];
             spawnedObjectCount++;
         }

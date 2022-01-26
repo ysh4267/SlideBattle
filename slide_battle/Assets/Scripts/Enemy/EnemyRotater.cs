@@ -30,7 +30,6 @@ public class EnemyRotater : MonoBehaviour {
         if (Physics.BoxCast(transform.position,transform.lossyScale,transform.forward, out hit,transform.rotation, minimumDistToAvoid,layerMask)) {
             Debug.DrawRay(transform.position,transform.TransformDirection(Vector3.forward) * 10, Color.black, 5f);
 
-
             Vector3 hitNormal = hit.normal;
 
             hitNormal.y = 0.0f;
