@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemyMovementController : MonoBehaviour {
     Rigidbody rigidbody;
-    EnumEnemyStatus currentStatus;
+    public EnumEnemyStatus currentStatus;
     Collision latestCollision;
-    Animator animator;
     [SerializeField] float speedLimit;
     [SerializeField] float power;
     [SerializeField] float bounceVelocityMultiplier;
@@ -14,7 +13,7 @@ public class EnemyMovementController : MonoBehaviour {
     private void Start() {
         currentStatus = EnumEnemyStatus.MOVE;
         rigidbody = gameObject.GetComponent<Rigidbody>();
-        animator = gameObject.GetComponent<Animator>();
+
     }
 
     private void Update() {
@@ -43,7 +42,6 @@ public class EnemyMovementController : MonoBehaviour {
                 break;
             case EnumEnemyStatus.STOP:
                 StopThisObject();
-                //SetWalkingAnimation();
                 break;
             default:
                 break;
@@ -62,7 +60,9 @@ public class EnemyMovementController : MonoBehaviour {
     private void CollideEnemyToEnemy() {
         Vector3 velocity = latestCollision.relativeVelocity;
         velocity.y = 0;
-        rigidbody.AddRelativeForce(velocity);
+
+        rigidbody.velocity = velocity *-1;
+
         currentStatus = EnumEnemyStatus.BOUNCE;
     } 
     private void CollideEnemyToPillar() {
@@ -89,16 +89,6 @@ public class EnemyMovementController : MonoBehaviour {
         }
     }
 
-    private void SetFlyingAnimation() {
-        animator.SetBool("isFlying", true);
-        animator.SetBool("isWalking", false);
-    }
-
-    private void SetWalkingAnimation() {
-        animator.SetBool("isFlying", false);
-        animator.SetBool("isWalking", true);
-    }
-
     private void UpdateLatestCollision(Collision collision) {
         latestCollision = collision;
     } 
@@ -108,16 +98,14 @@ public class EnemyMovementController : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player") {
             currentStatus = EnumEnemyStatus.COLLIDE_WITH_PLAYER;
-            //SetFlyingAnimation();
             CollidePlayerToEnemy();
         }
         else if (collision.gameObject.tag == "Enemy") {
             if (currentStatus == EnumEnemyStatus.BOUNCE) {
                 currentStatus = EnumEnemyStatus.STOP;
             }
-            else{
+            else if (collision.gameObject.GetComponent<EnemyMovementController>().currentStatus == EnumEnemyStatus.BOUNCE) { 
                 currentStatus = EnumEnemyStatus.COLLIDE_WITH_ENEMY;
-                //SetFlyingAnimation();
             }
         }
          else if(collision.gameObject.tag == "Pillar") {

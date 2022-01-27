@@ -5,5 +5,4 @@ using UnityEngine;
 public class StageSetDataContainer :Singleton<StageSetDataContainer>
 {
     [SerializeField] public List<StageSetData> stageSet;
-
 }

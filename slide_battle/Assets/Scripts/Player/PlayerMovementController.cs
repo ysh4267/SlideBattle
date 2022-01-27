@@ -15,6 +15,9 @@ public class PlayerMovementController : MonoBehaviour {
 
     public float curveSpeedDivider;
 
+    public float explosionDelay;
+    float explosionDelayTimer;
+
     private void Start() {
         currentStatus = EnumPlayerStatus.IDLE;
         rigidbody = gameObject.GetComponent<Rigidbody>();
@@ -26,7 +29,8 @@ public class PlayerMovementController : MonoBehaviour {
     }
 
     private void Update() {
-        if(currentStatus!= EnumPlayerStatus.OIL_SLIP)
+        explosionDelayTimer -= Time.deltaTime;
+        if (currentStatus!= EnumPlayerStatus.OIL_SLIP)
         TryGetPlayerInput();
     }
     private void FixedUpdate() {
@@ -86,6 +90,9 @@ public class PlayerMovementController : MonoBehaviour {
         }
     }
 
+    void InitExplosionDelay() {
+        explosionDelayTimer = explosionDelay;
+    }
 
 
     void ReflectByObstacle(Collision collision) {
@@ -107,7 +114,14 @@ public class PlayerMovementController : MonoBehaviour {
                 ReflectByObstacle(collision);
                 break;
             case "Enemy":
-                break;
+                if (collision.relativeVelocity.magnitude >= speedLimit * 0.9f && explosionDelayTimer <= 0.0f) {
+                    InitExplosionDelay();
+                    Handheld.Vibrate();
+                    Debug.Log("Explode!");
+                    GameObject explode = Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
+                    explode.transform.position = gameObject.transform.position;
+                }
+                    break;
             case "Hole":
                 Destroy(gameObject);
                 break;

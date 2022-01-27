@@ -12,12 +12,12 @@ public class ObjectSpawner : MonoBehaviour {
     }
 
     private void Update() {
+        if(spawnerSetting.totalObjectSpawnCount <= 0) { return; }
         if (spawnedObjectCount >= spawnerSetting.totalObjectSpawnCount) return;
-
         timeChecker += Time.deltaTime;
         if (timeChecker >= spawnerSetting.spawnTimeInterval) {
             timeChecker = 0.0f;
-            SpawnEnemy(spawnerSetting.objectSpawnCountAtSameTime);
+            SpawnObject(spawnerSetting.objectSpawnCountAtSameTime);
         }
     }
 
@@ -36,14 +36,13 @@ public class ObjectSpawner : MonoBehaviour {
         }
         List<Vector3> resultList = new List<Vector3>();
         foreach(int posIndex in positionList) {
-
             resultList.Add(spawnerSetting.spawnPositionList[posIndex].position);
         }
         return resultList;
     }
 
 
-    private void SpawnEnemy(int count) {
+    private void SpawnObject(int count) {
         List<Vector3> spawnPositionList = GetSpawnPositionList();
         for (int i = 0; i < count; i++) {
             if (spawnedObjectCount >= spawnerSetting.totalObjectSpawnCount) { return; }
