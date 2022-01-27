@@ -114,6 +114,7 @@ public class EnemyMovementController : MonoBehaviour {
 
         }
         else if (collision.gameObject.tag == "ProtectZone") {
+            StageManager.GetInstance().currentStage.givenPlayerHp -= 1;
             Destroy(gameObject);
         }
     }

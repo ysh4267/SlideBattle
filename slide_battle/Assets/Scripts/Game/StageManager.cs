@@ -5,11 +5,11 @@ using UnityEngine;
 public class StageManager : Singleton<StageManager>
 {
     int currentLevel;
-    StageSetData currentStage;
+    public StageSetData currentStage;
     ObjectSpawner[] spawners;
 
     private void Start() { 
-        Initialize();
+        SetUpStage();
     }
 
     public void LevelUpStage() {
@@ -19,10 +19,12 @@ public class StageManager : Singleton<StageManager>
         SetUpSpawners();
     }
 
-    private void Initialize() {
+    private void SetUpStage() {
         DataSaver.GetInstance().LoadStage();
         currentLevel = DataSaver.GetInstance().LoadStage();
         currentStage = GetProperStageSet(currentLevel);
+        LifeManager.GetInstance().InitLife();
+        InGameUI.GetInstance().UpdateUI();
         spawners = GetComponents<ObjectSpawner>();
         SetUpSpawners();
     }
@@ -62,7 +64,6 @@ public class StageManager : Singleton<StageManager>
                 clone.oilSpawnerSetting =stageSetData.oilSpawnerSetting;
                 clone.pillarSpawnerSetting =stageSetData.pillarSpawnerSetting;
                 clone.holeSpawnerSetting = stageSetData.holeSpawnerSetting;
-
                 return clone;
             }
         }

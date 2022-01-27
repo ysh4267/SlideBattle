@@ -12,9 +12,11 @@ public class Coin : MonoBehaviour
 
         gameObject.transform.eulerAngles = rotation;
     }
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player") {
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Player") {
             DataSaver.GetInstance().CollectCoin();
+            InGameUI.GetInstance().UpdateCoinUI();
             Destroy(gameObject);
         }
     }
