@@ -116,7 +116,7 @@ public class PlayerMovementController : MonoBehaviour {
             case "Enemy":
                 if (collision.relativeVelocity.magnitude >= speedLimit * 0.9f && explosionDelayTimer <= 0.0f) {
                     InitExplosionDelay();
-                    Handheld.Vibrate();
+                    Vibration.Vibrate(500);
                     Debug.Log("Explode!");
                     GameObject explode = Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
                     explode.transform.position = gameObject.transform.position;

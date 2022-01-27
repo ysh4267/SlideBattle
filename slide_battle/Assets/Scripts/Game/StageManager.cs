@@ -8,18 +8,20 @@ public class StageManager : Singleton<StageManager>
     StageSetData currentStage;
     ObjectSpawner[] spawners;
 
-    private void Start() {
+    private void Start() { 
         Initialize();
     }
-    
+
     public void LevelUpStage() {
         currentLevel += 1;
         currentStage = GetProperStageSet(currentLevel);
+        DataSaver.GetInstance().SaveStage(currentLevel);
         SetUpSpawners();
     }
 
     private void Initialize() {
-        currentLevel = 1;
+        DataSaver.GetInstance().LoadStage();
+        currentLevel = DataSaver.GetInstance().LoadStage();
         currentStage = GetProperStageSet(currentLevel);
         spawners = GetComponents<ObjectSpawner>();
         SetUpSpawners();
