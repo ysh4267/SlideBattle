@@ -47,8 +47,9 @@ public class ObjectSpawner : MonoBehaviour {
         for (int i = 0; i < count; i++) {
             if (spawnedObjectCount >= spawnerSetting.totalObjectSpawnCount) { return; }
 
-            GameObject enemy = Instantiate<GameObject>(spawnerSetting.objectPrefab, spawnPositionList[i], Quaternion.identity);
-            enemy.transform.position = spawnPositionList[i];
+            GameObject obj = Instantiate<GameObject>(spawnerSetting.objectPrefab, spawnPositionList[i], Quaternion.identity);
+            obj.transform.position = spawnPositionList[i];
+            StageManager.GetInstance().objects.Add(obj);
             spawnedObjectCount++;
         }
     }

@@ -20,7 +20,6 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
         CloseStartPanel();
         CloseTutorial();
         CloseClear();
-        CloseFail();
         CloseInGamePanel();
     }
 
@@ -38,6 +37,7 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
     //인게임 패널
     public void ActiveInGamePanel() {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.IN_GAME);
+        StageManager.GetInstance().SetEnemySpawnerOn();
         InGamePanel.SetActive(true);
     }
 
@@ -73,8 +73,16 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.GAME_OVER);
         FailPanel.SetActive(true);
     }
-    public void CloseFail()
+    public void CloseFail_Restart_Stage()
     {
+        Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.IN_GAME);
+        UIByStatus();
+        FailPanel.SetActive(false);
+    }
+
+    public void CloseFail_Restart_Game() {
+        Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.MAIN_MENU);
+        UIByStatus();
         FailPanel.SetActive(false);
     }
 
@@ -87,9 +95,9 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
         FadeEffect.SetActive(false);
     }
 
-    public override void OnNext(PanelStatus value) {
 
-        ENUM_PANEL_STATUS currentStatus =Observers.GetInstance().panelHandler.GetCurrentPanelStatus();
+    public void UIByStatus() {
+        ENUM_PANEL_STATUS currentStatus = Observers.GetInstance().panelHandler.GetCurrentPanelStatus();
         switch (currentStatus) {
             case ENUM_PANEL_STATUS.IN_GAME:
                 CloseStartPanel();
@@ -108,5 +116,9 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
                 ActiveStartPanel();
                 break;
         }
+    } 
+
+    public override void OnNext(PanelStatus value) {
+        UIByStatus();
     }
 }

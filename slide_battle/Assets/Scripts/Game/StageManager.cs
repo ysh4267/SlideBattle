@@ -8,8 +8,12 @@ public class StageManager : Singleton<StageManager>
     int currentStageScore;
     public StageSetData currentStage;
     ObjectSpawner[] spawners;
-
+    public List<GameObject> objects;
     private void Start() {
+        SetUpStage();
+    }
+
+    public void RestartStage() {
         SetUpStage();
     }
 
@@ -45,7 +49,7 @@ public class StageManager : Singleton<StageManager>
     }
 
     private void SetUpStage() {
-        DataSaver.GetInstance().LoadStage();
+        DestroyObjects();
         currentLevel = DataSaver.GetInstance().LoadStage();
         currentStage = GetProperStageSet(currentLevel);
         LifeManager.GetInstance().InitLife();
@@ -55,8 +59,16 @@ public class StageManager : Singleton<StageManager>
         DebugCurrentStageInfo();
     }
 
-    public void StartStage() {
-
+    public void SetEnemySpawnerOn() {
+        foreach(ObjectSpawner spawner in spawners) {
+            switch (spawner.spawnerSetting.SPAWN_OBJECT_TYPE) {
+                case ENUM_SPAWN_OBJECT.SPAWN_ENEMY:
+                    spawner.enabled = true;
+                    break;
+                default:
+                    break;
+            }
+           }
     }
 
     public void SetUpSpawners() {
@@ -64,6 +76,7 @@ public class StageManager : Singleton<StageManager>
             switch (spawner.spawnerSetting.SPAWN_OBJECT_TYPE) {
                 case ENUM_SPAWN_OBJECT.SPAWN_ENEMY:
                     spawner.spawnerSetting = currentStage.enemySpawnerSetting;
+                    spawner.enabled = false;
                     break;
                 case ENUM_SPAWN_OBJECT.SPAWN_HOLE:
                     spawner.spawnerSetting = currentStage.holeSpawnerSetting;
@@ -108,5 +121,12 @@ public class StageManager : Singleton<StageManager>
         else {
             return false;
         }
+    }
+
+    void DestroyObjects() {
+        foreach (GameObject obj in objects) {
+            Destroy(obj);
+        }
+        objects.Clear();
     }
 }
