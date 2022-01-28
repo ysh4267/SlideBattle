@@ -8,6 +8,7 @@ public class ProtectArea : MonoBehaviour
         if(collision.gameObject.tag == "Enemy") {
             LifeManager.GetInstance().LoseLife(1);
             InGameUI.GetInstance().UpdateLifeUI();
+            Destroy(collision.gameObject);
         }
     }
 }

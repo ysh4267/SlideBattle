@@ -5,18 +5,43 @@ using UnityEngine;
 public class StageManager : Singleton<StageManager>
 {
     int currentLevel;
+    int currentStageScore;
     public StageSetData currentStage;
     ObjectSpawner[] spawners;
 
-    private void Start() { 
+    private void Start() {
         SetUpStage();
     }
 
+    public void StageClear() {
+        Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.GAME_CLEAR);
+        Observers.GetInstance().panelHandler.NotifyObservers();
+        LevelUpStage();
+    }
+
+    public bool IsStageCleared() {
+        if(currentStage.enemySpawnerSetting.totalObjectSpawnCount <= currentStageScore+(currentStage.givenPlayerHp-LifeManager.GetInstance().GetCurrentLife())) {
+            return true;
+        }
+        return false;
+    }
+
+    public void AddCurrentStageScore(int amount) {
+        currentStageScore += amount;
+    }
     public void LevelUpStage() {
         currentLevel += 1;
         currentStage = GetProperStageSet(currentLevel);
         DataSaver.GetInstance().SaveStage(currentLevel);
-        SetUpSpawners();
+        SetUpStage();
+    }
+
+    private void DebugCurrentStageInfo() {
+        Debug.Log($"current stage Level : {currentLevel}");
+        Debug.Log($"current stage set Level : {currentStage.stageSetLevel}");
+        Debug.Log($"spawn enemy count: {currentStage.enemySpawnerSetting.totalObjectSpawnCount}");
+        Debug.Log($"current total Score : {DataSaver.GetInstance().GetScore()}");
+        Debug.Log($"current stage Score : {currentStageScore}");
     }
 
     private void SetUpStage() {
@@ -24,9 +49,14 @@ public class StageManager : Singleton<StageManager>
         currentLevel = DataSaver.GetInstance().LoadStage();
         currentStage = GetProperStageSet(currentLevel);
         LifeManager.GetInstance().InitLife();
-        InGameUI.GetInstance().UpdateUI();
+        currentStageScore = 0;
         spawners = GetComponents<ObjectSpawner>();
         SetUpSpawners();
+        DebugCurrentStageInfo();
+    }
+
+    public void StartStage() {
+
     }
 
     public void SetUpSpawners() {

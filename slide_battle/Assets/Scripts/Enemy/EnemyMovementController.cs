@@ -111,11 +111,6 @@ public class EnemyMovementController : MonoBehaviour {
          else if(collision.gameObject.tag == "Pillar") {
              currentStatus = EnumEnemyStatus.COLLIDE_WITH_PILLAR;
             CollideEnemyToPillar();
-
-        }
-        else if (collision.gameObject.tag == "ProtectZone") {
-            StageManager.GetInstance().currentStage.givenPlayerHp -= 1;
-            Destroy(gameObject);
         }
     }
 }

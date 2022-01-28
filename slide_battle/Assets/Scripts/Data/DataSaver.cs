@@ -7,6 +7,7 @@ public class DataSaver : Singleton<DataSaver> {
     private int latestStage = 1;
     private int score = 0;
     private void Start() {
+        ResetAllData();
         InitializeCoinStatus();
     }
 
@@ -45,9 +46,9 @@ public class DataSaver : Singleton<DataSaver> {
 
     public void AddScore(int scoreAdd) {
         score += scoreAdd;
-        PlayerPrefs.SetInt("Score",score);
+        PlayerPrefs.SetInt("Score", score);
     }
-    
+
     public void SaveStage(int stage) {
         PlayerPrefs.SetInt("Stage", stage);
     }

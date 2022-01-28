@@ -12,7 +12,7 @@ public class PlayerMovementController : MonoBehaviour {
     Vector3 touchStartPosition;
     Vector3 touchEndPosition;
     Vector3 directionVector;
-
+    [SerializeField] Transform PlayerSpawnPosition;
     public float curveSpeedDivider;
 
     public float explosionDelay;
@@ -30,11 +30,18 @@ public class PlayerMovementController : MonoBehaviour {
 
     private void Update() {
         explosionDelayTimer -= Time.deltaTime;
-        if (currentStatus!= EnumPlayerStatus.OIL_SLIP)
-        TryGetPlayerInput();
+        if (IsControllerActive()) {
+            TryGetPlayerInput();
+        }
     }
     private void FixedUpdate() {
-        RunPlayer();
+        if (Observers.GetInstance().panelHandler.GetCurrentPanelStatus() == ENUM_PANEL_STATUS.IN_GAME) {
+            RunPlayer();
+        }
+        else {
+            rigidbody.velocity = new Vector3(0,0,0);
+            transform.position = PlayerSpawnPosition.position;
+        }
     }
 
     void RunPlayer() {
@@ -59,7 +66,7 @@ public class PlayerMovementController : MonoBehaviour {
 
     void SlowDownPlayer() {
         if (rigidbody.velocity.magnitude <= 0.001) {
-            rigidbody.velocity = new Vector3(0,0,0);
+            rigidbody.velocity = new Vector3(0, 0, 0);
             currentStatus = EnumPlayerStatus.IDLE;
         }
         rigidbody.velocity *= 0.99f;
@@ -99,12 +106,19 @@ public class PlayerMovementController : MonoBehaviour {
         Vector3 collisionPoint = collision.contacts[0].point;
         Vector3 objectPosition = collision.gameObject.transform.position;
 
-        directionVector = Vector3.Reflect(collision.relativeVelocity.normalized, (collisionPoint - objectPosition).normalized)* -1;
+        directionVector = Vector3.Reflect(collision.relativeVelocity.normalized, (collisionPoint - objectPosition).normalized) * -1;
         directionVector.y = 0;
         float remainPower = collision.relativeVelocity.magnitude / directionVector.magnitude;
         rigidbody.velocity = directionVector * remainPower;
 
         currentStatus = EnumPlayerStatus.REFLECTED_BY_OBSTACLE;
+    }
+
+    bool IsControllerActive() {
+        if (currentStatus == EnumPlayerStatus.OIL_SLIP) return false;
+        if (Observers.GetInstance().panelHandler.GetCurrentPanelStatus() != ENUM_PANEL_STATUS.IN_GAME) return false;
+
+        return true;
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -121,7 +135,7 @@ public class PlayerMovementController : MonoBehaviour {
                     GameObject explode = Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
                     explode.transform.position = gameObject.transform.position;
                 }
-                    break;
+                break;
             case "Hole":
                 Destroy(gameObject);
                 break;

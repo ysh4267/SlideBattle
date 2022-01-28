@@ -8,6 +8,10 @@ public class InGameUI :Singleton<InGameUI>
     [SerializeField] public TextMeshProUGUI gold;
     [SerializeField] public TextMeshPro life;
 
+    private void OnEnable() {
+        UpdateUI();
+    }
+
     public void UpdateUI() {
         UpdateScoreUI();
         UpdateCoinUI();
