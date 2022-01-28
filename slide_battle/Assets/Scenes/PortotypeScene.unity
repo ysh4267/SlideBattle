@@ -452,7 +452,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207518109}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 157728069}
@@ -460,7 +460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 153, y: 20}
+  m_AnchoredPosition: {x: 155, y: 20}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &207518111
@@ -1419,8 +1419,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 378800444}
-        m_TargetAssemblyTypeName: UiClose, Assembly-CSharp
-        m_MethodName: ACtiveTutorial
+        m_TargetAssemblyTypeName: PanelChangeMachine, Assembly-CSharp
+        m_MethodName: ActiveTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 528645426}
   - component: {fileID: 528645428}
   - component: {fileID: 528645427}
+  - component: {fileID: 528645429}
   m_Layer: 5
   m_Name: ClearPanel
   m_TagString: Untagged
@@ -1590,6 +1591,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528645425}
   m_CullTransparentMesh: 1
+--- !u!114 &528645429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528645425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0a7869d2941d245a7b3b5d0d9783ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 1494575337}
+  gold: {fileID: 1274983219}
 --- !u!1 &543448051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,6 +2772,7 @@ GameObject:
   - component: {fileID: 1029097844}
   - component: {fileID: 1029097846}
   - component: {fileID: 1029097845}
+  - component: {fileID: 1029097847}
   m_Layer: 5
   m_Name: FailPanel
   m_TagString: Untagged
@@ -2825,6 +2841,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029097843}
   m_CullTransparentMesh: 1
+--- !u!114 &1029097847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029097843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0a7869d2941d245a7b3b5d0d9783ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 1080742337}
+  gold: {fileID: 1718272952}
 --- !u!1 &1080742335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,8 +3456,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 378800444}
-        m_TargetAssemblyTypeName: UiClose, Assembly-CSharp
-        m_MethodName: CloseFail
+        m_TargetAssemblyTypeName: PanelChangeMachine, Assembly-CSharp
+        m_MethodName: CloseFail_Restart_Stage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 658565994057564319}
+        m_TargetAssemblyTypeName: StageManager, Assembly-CSharp
+        m_MethodName: RestartStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4708,6 +4750,7 @@ GameObject:
   - component: {fileID: 1661633892}
   - component: {fileID: 1661633891}
   - component: {fileID: 1661633893}
+  - component: {fileID: 1661633894}
   m_Layer: 5
   m_Name: StartPanel
   m_TagString: Untagged
@@ -4794,6 +4837,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &1661633894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661633889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d896c370ebf17764eaa4504c41052b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: {fileID: 1937862695}
+  gold: {fileID: 207518111}
 --- !u!1 &1718272950
 GameObject:
   m_ObjectHideFlags: 0
@@ -6174,10 +6231,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.8150133
+  m_Radius: 1.6830735
   m_Height: 6.7954
   m_Direction: 1
-  m_Center: {x: 0.44542244, y: 0.87841547, z: 0.90099686}
+  m_Center: {x: -0.083651535, y: 0.87841547, z: -0.06583659}
 --- !u!114 &658565993053762302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6919,6 +6976,7 @@ MonoBehaviour:
       totalObjectSpawnCount: 0
       spawnPositionList: []
       objectPrefab: {fileID: 0}
+  objects: []
 --- !u!114 &658565994057564384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7597,6 +7655,10 @@ PrefabInstance:
     - target: {fileID: 5749913256805904160, guid: f3c1e4e7b3207fb4db9a28dafed7f6d4, type: 3}
       propertyPath: m_Name
       value: ProtectArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 7964901219601585975, guid: f3c1e4e7b3207fb4db9a28dafed7f6d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7964901219601585975, guid: f3c1e4e7b3207fb4db9a28dafed7f6d4, type: 3}
       propertyPath: m_Materials.Array.data[0]
