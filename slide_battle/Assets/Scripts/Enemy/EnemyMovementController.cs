@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class EnemyMovementController : MonoBehaviour {
     Rigidbody rigidbody;
-    public EnumEnemyStatus currentStatus;
+    public ENUM_ENEMY_STATUS currentStatus;
     Collision latestCollision;
     [SerializeField] float speedLimit;
     [SerializeField] float power;
     [SerializeField] float bounceVelocityMultiplier;
     [SerializeField] float stopVelocityDivider;
     private void Start() {
-        currentStatus = EnumEnemyStatus.MOVE;
+        currentStatus = ENUM_ENEMY_STATUS.MOVE;
         rigidbody = gameObject.GetComponent<Rigidbody>();
 
     }
@@ -25,22 +25,22 @@ public class EnemyMovementController : MonoBehaviour {
 
     private void FixedUpdate() {
         switch (currentStatus) {
-            case EnumEnemyStatus.MOVE:
+            case ENUM_ENEMY_STATUS.MOVE:
                 MoveEnemy();
                 break;
-            case EnumEnemyStatus.COLLIDE_WITH_PLAYER:
+            case ENUM_ENEMY_STATUS.COLLIDE_WITH_PLAYER:
                 CollidePlayerToEnemy();
                 break;
-            case EnumEnemyStatus.COLLIDE_WITH_ENEMY:
+            case ENUM_ENEMY_STATUS.COLLIDE_WITH_ENEMY:
                 CollideEnemyToEnemy();
                 break;
-            case EnumEnemyStatus.COLLIDE_WITH_PILLAR:
+            case ENUM_ENEMY_STATUS.COLLIDE_WITH_PILLAR:
                 CollideEnemyToPillar();
                 break;
-            case EnumEnemyStatus.BOUNCE:
+            case ENUM_ENEMY_STATUS.BOUNCE:
                 Bounce();
                 break;
-            case EnumEnemyStatus.STOP:
+            case ENUM_ENEMY_STATUS.STOP:
                 StopThisObject();
                 break;
             default:
@@ -49,13 +49,13 @@ public class EnemyMovementController : MonoBehaviour {
     }
     private void StopThisObject() {
         rigidbody.velocity *= stopVelocityDivider;
-        currentStatus = EnumEnemyStatus.MOVE;
+        currentStatus = ENUM_ENEMY_STATUS.MOVE;
     }
     private void CollidePlayerToEnemy() {
         Vector3 velocity = latestCollision.relativeVelocity*bounceVelocityMultiplier;
         velocity.y = 0;
         rigidbody.velocity = velocity;
-        currentStatus = EnumEnemyStatus.BOUNCE;
+        currentStatus = ENUM_ENEMY_STATUS.BOUNCE;
     }
     private void CollideEnemyToEnemy() {
         Vector3 velocity = latestCollision.relativeVelocity;
@@ -63,7 +63,7 @@ public class EnemyMovementController : MonoBehaviour {
 
         rigidbody.velocity = velocity *-1;
 
-        currentStatus = EnumEnemyStatus.BOUNCE;
+        currentStatus = ENUM_ENEMY_STATUS.BOUNCE;
     } 
     private void CollideEnemyToPillar() {
         Vector3 collisionPoint = latestCollision.contacts[0].point;
@@ -76,11 +76,11 @@ public class EnemyMovementController : MonoBehaviour {
         float remainPower = latestCollision.relativeVelocity.magnitude / directionVector.magnitude;
         rigidbody.velocity = directionVector * remainPower ;
     
-        currentStatus = EnumEnemyStatus.MOVE;
+        currentStatus = ENUM_ENEMY_STATUS.MOVE;
     }
     private void Bounce() {
         if (rigidbody.velocity.magnitude < 0.1f) {
-            currentStatus = EnumEnemyStatus.MOVE;
+            currentStatus = ENUM_ENEMY_STATUS.MOVE;
         }
     }
     private void MoveEnemy() {
@@ -97,19 +97,19 @@ public class EnemyMovementController : MonoBehaviour {
         UpdateLatestCollision(collision);
 
         if (collision.gameObject.tag == "Player") {
-            currentStatus = EnumEnemyStatus.COLLIDE_WITH_PLAYER;
+            currentStatus = ENUM_ENEMY_STATUS.COLLIDE_WITH_PLAYER;
             CollidePlayerToEnemy();
         }
         else if (collision.gameObject.tag == "Enemy") {
-            if (currentStatus == EnumEnemyStatus.BOUNCE) {
-                currentStatus = EnumEnemyStatus.STOP;
+            if (currentStatus == ENUM_ENEMY_STATUS.BOUNCE) {
+                currentStatus = ENUM_ENEMY_STATUS.STOP;
             }
-            else if (collision.gameObject.GetComponent<EnemyMovementController>().currentStatus == EnumEnemyStatus.BOUNCE) { 
-                currentStatus = EnumEnemyStatus.COLLIDE_WITH_ENEMY;
+            else if (collision.gameObject.GetComponent<EnemyMovementController>().currentStatus == ENUM_ENEMY_STATUS.BOUNCE) { 
+                currentStatus = ENUM_ENEMY_STATUS.COLLIDE_WITH_ENEMY;
             }
         }
          else if(collision.gameObject.tag == "Pillar") {
-             currentStatus = EnumEnemyStatus.COLLIDE_WITH_PILLAR;
+             currentStatus = ENUM_ENEMY_STATUS.COLLIDE_WITH_PILLAR;
             CollideEnemyToPillar();
         }
     }

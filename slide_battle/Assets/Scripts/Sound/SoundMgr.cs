@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundMgr : MonoBehaviour
+public class SoundMgr : Singleton<SoundMgr>
 {
     [SerializeField] Toggle BgmToggle;
     [SerializeField] Toggle SoundToggle;
@@ -37,6 +37,22 @@ public class SoundMgr : MonoBehaviour
         {
             EffectSound.volume = 0;
         }
+    }
+
+    public void PlayHitSound()
+    {
+        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitNormal");
+        EffectSound.Play();
+    }
+    public void PlayHitMaxSound()
+    {
+        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitMax");
+        EffectSound.Play();
+    }
+    public void PlayHitPillarSound()
+    {
+        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitPillar");
+        EffectSound.Play();
     }
 
     private void Update()

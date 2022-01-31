@@ -11,7 +11,7 @@ public class EnemyAnimationController : MonoBehaviour
     }
 
     private void Update() {
-        if(status.currentStatus == EnumEnemyStatus.STOP) {
+        if(status.currentStatus == ENUM_ENEMY_STATUS.STOP) {
             SetWalkingAnimation();
         }   
     }
@@ -31,7 +31,7 @@ public class EnemyAnimationController : MonoBehaviour
             SetFlyingAnimation();
         }
         else if(collision.gameObject.tag == "Enemy") {
-            if(collision.gameObject.GetComponent<EnemyMovementController>().currentStatus == EnumEnemyStatus.BOUNCE) {
+            if(collision.gameObject.GetComponent<EnemyMovementController>().currentStatus == ENUM_ENEMY_STATUS.BOUNCE) {
                 SetFlyingAnimation();
             }
         }
