@@ -38,9 +38,12 @@ public class PlayerMovementController : MonoBehaviour {
         if (Observers.GetInstance().panelHandler.GetCurrentPanelStatus() == ENUM_PANEL_STATUS.IN_GAME) {
             RunPlayer();
         }
-        else {
-            rigidbody.velocity = new Vector3(0,0,0);
+        else
+        {
+            rigidbody.velocity = new Vector3(0, 0, 0);
+            directionVector = new Vector3(0,0,0);
             transform.position = PlayerSpawnPosition.position;
+            
         }
     }
 
@@ -125,15 +128,24 @@ public class PlayerMovementController : MonoBehaviour {
         switch (collision.gameObject.tag) {
             case "Pillar":
                 Debug.Log("player pillar!");
+                SoundMgr.GetInstance().PlayHitPillarSound();
                 ReflectByObstacle(collision);
                 break;
             case "Enemy":
                 if (collision.relativeVelocity.magnitude >= speedLimit * 0.9f && explosionDelayTimer <= 0.0f) {
                     InitExplosionDelay();
-                    Vibration.Vibrate(500);
+                    SoundMgr.GetInstance().PlayHitMaxSound();
+                    if (VibeMgr.GetInstance().VibeOn)
+                    {
+                        Vibration.Vibrate(500);
+                    }
                     Debug.Log("Explode!");
                     GameObject explode = Instantiate(Resources.Load<GameObject>("Prefabs/Explosion"));
                     explode.transform.position = gameObject.transform.position;
+                }
+                else
+                {
+                    SoundMgr.GetInstance().PlayHitSound();
                 }
                 break;
             case "Hole":

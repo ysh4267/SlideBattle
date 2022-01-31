@@ -9,6 +9,10 @@ public class ProtectArea : MonoBehaviour
             LifeManager.GetInstance().LoseLife(1);
             InGameUI.GetInstance().UpdateLifeUI();
             Destroy(collision.gameObject);
+            if (StageManager.GetInstance().IsStageCleared())
+            {
+                StageManager.GetInstance().StageClear();
+            }
         }
     }
 }
