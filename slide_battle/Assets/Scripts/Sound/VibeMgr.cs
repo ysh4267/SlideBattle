@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VibeMgr : MonoBehaviour
+public class VibeMgr : Singleton<VibeMgr>
 {
     [SerializeField] Toggle VibeToggle;
 
-    bool VibeOn = true;
+    public bool VibeOn = true;
 
     public void ToggleVibe(bool VibeIn)
     {

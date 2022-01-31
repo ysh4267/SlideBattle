@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EnumEnemyStatus
+public enum ENUM_ENEMY_STATUS
 {
     STOP,
     MOVE,

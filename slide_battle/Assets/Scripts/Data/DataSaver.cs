@@ -9,6 +9,7 @@ public class DataSaver : Singleton<DataSaver> {
     private void Start() {
         ResetAllData();
         InitializeCoinStatus();
+        InitializeScoreStatus();
     }
 
     void InitializeCoinStatus() {
@@ -20,56 +21,76 @@ public class DataSaver : Singleton<DataSaver> {
             coin = 0;
         }
     }
-    
-    public void ResetAllData() {
-        if (PlayerPrefs.HasKey("Coin")) {
-            PlayerPrefs.SetInt("Coin", 0);
+    void InitializeScoreStatus()
+    {
+        if (PlayerPrefs.HasKey("Score"))
+        {
+            score = PlayerPrefs.GetInt("Score");
         }
-        if (PlayerPrefs.HasKey("Stage")) {
-            PlayerPrefs.SetInt("Stage", 1);
-        }
-        if (PlayerPrefs.HasKey("Score")) {
-            PlayerPrefs.SetInt("Score", 0);
+        else
+        {
+            score = 0;
+            PlayerPrefs.SetInt("Score",score);
         }
     }
 
+    public void ResetAllData() {
+        ResetCoinData();
+        ResetStageData();
+        ResetScoreData();
+        SaveData();
+    }
+
+    public void ResetCoinData()
+    {
+        coin = 0;
+    }
+
+
+    public void ResetScoreData()
+    {
+        score = 0;
+    }
+
+    public void ResetStageData()
+    {
+        latestStage = 1;
+    }
 
     public int GetScore() {
-        if (PlayerPrefs.HasKey("Score")) {
-            return PlayerPrefs.GetInt("Score");
-        }
-        else {
-            PlayerPrefs.SetInt("Score",0);
-            return 0;
-        }
+        return score;
     }
 
     public void AddScore(int scoreAdd) {
         score += scoreAdd;
-        PlayerPrefs.SetInt("Score", score);
     }
 
-    public void SaveStage(int stage) {
-        PlayerPrefs.SetInt("Stage", stage);
+    public void SetStage(int stage) {
+        latestStage = stage;
     }
 
-    public int LoadStage() {
-        if (PlayerPrefs.HasKey("Stage")) {
-            latestStage = PlayerPrefs.GetInt("Stage");
-        }
-        else {
-            latestStage = 1;
-        }
+    public void SaveData()
+    {
+        PlayerPrefs.SetInt("Score",score);
+        PlayerPrefs.SetInt("Coin",coin);
+        PlayerPrefs.SetInt("Stage",latestStage);
+        PlayerPrefs.Save();
+    }
+    public void LoadData()
+    {
+        score = PlayerPrefs.GetInt("Score");
+        coin = PlayerPrefs.GetInt("Coin");
+        latestStage = PlayerPrefs.GetInt("Stage");
+    }
+    public int GetStage() {
         return latestStage;
     }
 
     public void CollectCoin() {
         coin += 1;
-        PlayerPrefs.SetInt("Coin", coin);
-        PlayerPrefs.Save();
     }
 
     public int GetCurrentCoin() {
-        return PlayerPrefs.GetInt("Coin");
+        return coin;
     }
 }
