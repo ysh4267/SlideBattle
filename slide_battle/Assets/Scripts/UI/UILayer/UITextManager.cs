@@ -14,7 +14,7 @@ public static class UITextManager
     }
 
     static public string GetStageText() {
-        return $"STAGE {DataSaver.GetInstance().GetStage()}";
+        return $"STAGE {DataSaver.GetInstance().LoadStage()}";
     }
 
     static public string GetLifeText() {

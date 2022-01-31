@@ -76,15 +76,12 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
     public void CloseFail_Restart_Stage()
     {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.IN_GAME);
-        DataSaver.GetInstance().LoadData();
-        StageManager.GetInstance().RestartStage();
         UIByStatus();
         FailPanel.SetActive(false);
     }
 
     public void CloseFail_Restart_Game() {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.MAIN_MENU);
-        StageManager.GetInstance().RestartGame();
         UIByStatus();
         FailPanel.SetActive(false);
     }

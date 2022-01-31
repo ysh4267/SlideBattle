@@ -17,14 +17,6 @@ public class StageManager : Singleton<StageManager>
         SetUpStage();
     }
 
-    public void RestartGame()
-    {
-        DataSaver.GetInstance().ResetScoreData();
-        DataSaver.GetInstance().ResetStageData();
-        DataSaver.GetInstance().SaveData();
-        SetUpStage();
-    }
-
     public void StageClear() {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.GAME_CLEAR);
         Observers.GetInstance().panelHandler.NotifyObservers();
@@ -44,8 +36,7 @@ public class StageManager : Singleton<StageManager>
     public void LevelUpStage() {
         currentLevel += 1;
         currentStage = GetProperStageSet(currentLevel);
-        DataSaver.GetInstance().SetStage(currentLevel);
-        DataSaver.GetInstance().SaveData();
+        DataSaver.GetInstance().SaveStage(currentLevel);
         SetUpStage();
     }
 
@@ -59,8 +50,7 @@ public class StageManager : Singleton<StageManager>
 
     private void SetUpStage() {
         DestroyObjects();
-        DataSaver.GetInstance().LoadData();
-        currentLevel = DataSaver.GetInstance().GetStage();
+        currentLevel = DataSaver.GetInstance().LoadStage();
         currentStage = GetProperStageSet(currentLevel);
         LifeManager.GetInstance().InitLife();
         currentStageScore = 0;
