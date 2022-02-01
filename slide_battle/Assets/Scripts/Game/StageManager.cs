@@ -9,7 +9,10 @@ public class StageManager : Singleton<StageManager>
     public StageSetData currentStage;
     ObjectSpawner[] spawners;
     public List<GameObject> objects;
+    CoinSpawner coinSpawner;
     private void Start() {
+        spawners = GetComponents<ObjectSpawner>();
+        coinSpawner = gameObject.GetComponent<CoinSpawner>();
         SetUpStage();
     }
 
@@ -28,6 +31,7 @@ public class StageManager : Singleton<StageManager>
     public void StageClear() {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.GAME_CLEAR);
         Observers.GetInstance().panelHandler.NotifyObservers();
+        coinSpawner.StopEveryCoinSpawn();
         LevelUpStage();
     }
 
@@ -55,17 +59,19 @@ public class StageManager : Singleton<StageManager>
         Debug.Log($"spawn enemy count: {currentStage.enemySpawnerSetting.totalObjectSpawnCount}");
         Debug.Log($"current total Score : {DataSaver.GetInstance().GetScore()}");
         Debug.Log($"current stage Score : {currentStageScore}");
+        Debug.Log($"current fever prob : {currentStage.feverTimeProbability}");
     }
 
     private void SetUpStage() {
         DestroyObjects();
+        coinSpawner.DestroyAndClearCoinList();
         DataSaver.GetInstance().LoadData();
         currentLevel = DataSaver.GetInstance().GetStage();
         currentStage = GetProperStageSet(currentLevel);
         LifeManager.GetInstance().InitLife();
         currentStageScore = 0;
-        spawners = GetComponents<ObjectSpawner>();
         SetUpSpawners();
+        coinSpawner.TriggerDefaultCoinSpawn();
         DebugCurrentStageInfo();
     }
 
@@ -117,6 +123,7 @@ public class StageManager : Singleton<StageManager>
                 clone.oilSpawnerSetting =stageSetData.oilSpawnerSetting;
                 clone.pillarSpawnerSetting =stageSetData.pillarSpawnerSetting;
                 clone.holeSpawnerSetting = stageSetData.holeSpawnerSetting;
+                clone.feverTimeProbability = stageSetData.feverTimeProbability;
                 return clone;
             }
         }

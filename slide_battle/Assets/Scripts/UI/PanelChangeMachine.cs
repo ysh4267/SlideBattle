@@ -38,6 +38,8 @@ public class PanelChangeMachine : ObserverContainer<PanelStatus>
     public void ActiveInGamePanel() {
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.IN_GAME);
         StageManager.GetInstance().SetEnemySpawnerOn();
+        StageManager.GetInstance().gameObject.GetComponent<CoinSpawner>().TriggerDefaultCoinSpawn();
+        StageManager.GetInstance().gameObject.GetComponent<CoinSpawner>().TriggerFeverTime(StageManager.GetInstance().currentStage.feverTimeProbability);
         InGamePanel.SetActive(true);
     }
 

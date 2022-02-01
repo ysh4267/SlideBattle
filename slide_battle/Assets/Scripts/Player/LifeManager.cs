@@ -24,6 +24,7 @@ public class LifeManager : Singleton<LifeManager> {
         Debug.Log("Game OVER");
         Observers.GetInstance().panelHandler.SetPanelStatus(ENUM_PANEL_STATUS.GAME_OVER);
         Observers.GetInstance().panelHandler.NotifyObservers();
+        StageManager.GetInstance().gameObject.GetComponent<CoinSpawner>().StopEveryCoinSpawn();
     }
     public bool IsPlayerDead() {
         if (currentLife <= 0) {

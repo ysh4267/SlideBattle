@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SoundMgr : Singleton<SoundMgr>
 {
-    [SerializeField] Toggle BgmToggle;
-    [SerializeField] Toggle SoundToggle;
+    [SerializeField] public Toggle BgmToggle;
+    [SerializeField] public Toggle SoundToggle;
 
     public AudioSource Bgm;
     public AudioSource EffectSound;

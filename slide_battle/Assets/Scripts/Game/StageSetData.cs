@@ -11,4 +11,5 @@ public class StageSetData
     public SpawnerSetting oilSpawnerSetting;
     public SpawnerSetting pillarSpawnerSetting;
     public SpawnerSetting holeSpawnerSetting;
+    public float feverTimeProbability;
 }
