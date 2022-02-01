@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -693,6 +693,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207518109}
   m_CullTransparentMesh: 1
+--- !u!1 &226700306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226700307}
+  m_Layer: 0
+  m_Name: spawnTransform_4 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226700307
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226700306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.4, y: 0, z: 65.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994225671653}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &237891933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +1909,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &592943648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 592943649}
+  m_Layer: 0
+  m_Name: spawnTransform_4 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &592943649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592943648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.7, y: 0, z: -55.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994225671653}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &616820570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,6 +2057,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &679855193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 679855194}
+  m_Layer: 0
+  m_Name: HoleSpawnTransfrom (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &679855194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679855193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45, y: 2.3, z: -35.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994623390838}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &691495518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691495519}
+  m_Layer: 0
+  m_Name: spawnTransform_4 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &691495519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691495518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.4, y: 0, z: -53.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994225671653}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &788756155
 GameObject:
@@ -2304,6 +2424,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860083263}
   m_CullTransparentMesh: 1
+--- !u!1 &873831520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873831521}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &873831521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873831520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 53.6, y: 0, z: -17.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994653982520}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920988407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2380,6 +2530,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920988407}
   m_CullTransparentMesh: 1
+--- !u!1 &932247840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 932247841}
+  m_Layer: 0
+  m_Name: HoleSpawnTransfrom (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &932247841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932247840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.3, y: 2.3, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994623390838}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &933659312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7707039291250837314, guid: 583e40749f332d24ba3bebe76226ed33, type: 3}
@@ -2430,6 +2610,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VibeToggle: {fileID: 292314293}
   VibeOn: 1
+--- !u!1 &941148086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941148087}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &941148087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941148086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.7, y: 0, z: -31.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565993693506701}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949866224
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +4117,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169841332}
   m_CullTransparentMesh: 1
+--- !u!1 &1173682664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1173682665}
+  m_Layer: 0
+  m_Name: GameObject (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1173682665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173682664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.7, y: 0, z: 23.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565993693506701}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208014187
 GameObject:
   m_ObjectHideFlags: 0
@@ -4281,6 +4521,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274983217}
   m_CullTransparentMesh: 1
+--- !u!1 &1320556347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320556348}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320556348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320556347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.9, y: 0, z: 15.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994653982520}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332742492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,6 +4641,36 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &1369633903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1369633904}
+  m_Layer: 0
+  m_Name: HoleSpawnTransfrom (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1369633904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369633903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.3, y: 2.3, z: -45.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994623390838}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378411349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,6 +4747,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378411349}
   m_CullTransparentMesh: 1
+--- !u!1 &1385231335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385231336}
+  m_Layer: 0
+  m_Name: HoleSpawnTransfrom (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1385231336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385231335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.7, y: 2.3, z: 43}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994623390838}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1402448730
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402448731}
+  m_Layer: 0
+  m_Name: spawnTransform_4 (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1402448731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402448730}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -35.3, y: 0, z: 59.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 658565994225671653}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1480423549
 GameObject:
   m_ObjectHideFlags: 0
@@ -6600,6 +6960,8 @@ Transform:
   m_Children:
   - {fileID: 658565994014341873}
   - {fileID: 658565993934182829}
+  - {fileID: 941148087}
+  - {fileID: 1173682665}
   m_Father: {fileID: 658565994475599673}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6853,7 +7215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658565993934182828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.2, y: 0, z: 0}
+  m_LocalPosition: {x: 41.2, y: 0, z: -35.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 658565993693506701}
@@ -6947,7 +7309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageSet:
   - stageSetLevel: 1
-    givenPlayerHp: 3
+    givenPlayerHp: 7
     stageRange:
       minStageLevel: 1
       maxStageLevel: 5
@@ -6955,7 +7317,7 @@ MonoBehaviour:
       SPAWN_OBJECT_TYPE: 0
       spawnTimeInterval: 3
       objectSpawnCountAtSameTime: 1
-      totalObjectSpawnCount: 5
+      totalObjectSpawnCount: 10
       spawnPositionList:
       - {fileID: 658565993091614850}
       - {fileID: 658565993618036567}
@@ -6965,129 +7327,302 @@ MonoBehaviour:
     oilSpawnerSetting:
       SPAWN_OBJECT_TYPE: 1
       spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 5544251630154843997, guid: a2a531f4a19b81f43bb70992df2a6a6a, type: 3}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 2
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 3151571325878696028, guid: c06e185df61534640abe8366549e239c, type: 3}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 3
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 9048113276160138740, guid: 1f0e6a559c2fb5046b64e5db5d5a93ae, type: 3}
+  - stageSetLevel: 6
+    givenPlayerHp: 6
+    stageRange:
+      minStageLevel: 6
+      maxStageLevel: 10
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2.5
       objectSpawnCountAtSameTime: 1
-      totalObjectSpawnCount: 1
+      totalObjectSpawnCount: 15
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 1
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
       spawnPositionList:
       - {fileID: 658565994216174946}
       - {fileID: 658565993817075405}
       objectPrefab: {fileID: 5544251630154843997, guid: a2a531f4a19b81f43bb70992df2a6a6a, type: 3}
     pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+  - stageSetLevel: 11
+    givenPlayerHp: 5
+    stageRange:
+      minStageLevel: 11
+      maxStageLevel: 15
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2.5
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 20
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    pillarSpawnerSetting:
       SPAWN_OBJECT_TYPE: 2
       spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 1
-      totalObjectSpawnCount: 1
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
       spawnPositionList:
       - {fileID: 658565994014341873}
       - {fileID: 658565993934182829}
+      - {fileID: 941148087}
+      - {fileID: 1173682665}
+      objectPrefab: {fileID: 3151571325878696028, guid: c06e185df61534640abe8366549e239c, type: 3}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+  - stageSetLevel: 16
+    givenPlayerHp: 5
+    stageRange:
+      minStageLevel: 16
+      maxStageLevel: 25
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2
+      objectSpawnCountAtSameTime: 3
+      totalObjectSpawnCount: 28
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      - {fileID: 691495519}
+      - {fileID: 226700307}
+      - {fileID: 592943649}
+      - {fileID: 1402448731}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 1
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
+      spawnPositionList:
+      - {fileID: 658565994216174946}
+      - {fileID: 658565993817075405}
+      - {fileID: 1320556348}
+      - {fileID: 873831521}
+      objectPrefab: {fileID: 5544251630154843997, guid: a2a531f4a19b81f43bb70992df2a6a6a, type: 3}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 2
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
+      spawnPositionList:
+      - {fileID: 658565994014341873}
+      - {fileID: 658565993934182829}
+      - {fileID: 941148087}
+      - {fileID: 1173682665}
+      objectPrefab: {fileID: 3151571325878696028, guid: c06e185df61534640abe8366549e239c, type: 3}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+  - stageSetLevel: 26
+    givenPlayerHp: 4
+    stageRange:
+      minStageLevel: 26
+      maxStageLevel: 30
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2
+      objectSpawnCountAtSameTime: 3
+      totalObjectSpawnCount: 33
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      - {fileID: 691495519}
+      - {fileID: 226700307}
+      - {fileID: 592943649}
+      - {fileID: 1402448731}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 1
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 2
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 3
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
+      spawnPositionList:
+      - {fileID: 658565993478603002}
+      - {fileID: 658565994421551026}
+      - {fileID: 932247841}
+      - {fileID: 679855194}
+      objectPrefab: {fileID: 9048113276160138740, guid: 1f0e6a559c2fb5046b64e5db5d5a93ae, type: 3}
+  - stageSetLevel: 31
+    givenPlayerHp: 3
+    stageRange:
+      minStageLevel: 31
+      maxStageLevel: 40
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2
+      objectSpawnCountAtSameTime: 3
+      totalObjectSpawnCount: 42
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      - {fileID: 691495519}
+      - {fileID: 226700307}
+      - {fileID: 592943649}
+      - {fileID: 1402448731}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 1
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 5544251630154843997, guid: a2a531f4a19b81f43bb70992df2a6a6a, type: 3}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 2
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 3
+      totalObjectSpawnCount: 3
+      spawnPositionList:
+      - {fileID: 658565994014341873}
+      - {fileID: 658565993934182829}
+      - {fileID: 941148087}
+      - {fileID: 1173682665}
       objectPrefab: {fileID: 3151571325878696028, guid: c06e185df61534640abe8366549e239c, type: 3}
     holeSpawnerSetting:
       SPAWN_OBJECT_TYPE: 3
       spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 3
+      totalObjectSpawnCount: 3
+      spawnPositionList:
+      - {fileID: 658565993478603002}
+      - {fileID: 658565994421551026}
+      - {fileID: 932247841}
+      - {fileID: 679855194}
+      - {fileID: 1369633904}
+      - {fileID: 1385231336}
+      objectPrefab: {fileID: 9048113276160138740, guid: 1f0e6a559c2fb5046b64e5db5d5a93ae, type: 3}
+  - stageSetLevel: 41
+    givenPlayerHp: 3
+    stageRange:
+      minStageLevel: 41
+      maxStageLevel: 50
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 2
+      objectSpawnCountAtSameTime: 4
+      totalObjectSpawnCount: 51
+      spawnPositionList:
+      - {fileID: 658565993091614850}
+      - {fileID: 658565993618036567}
+      - {fileID: 658565993435290068}
+      - {fileID: 658565994706267916}
+      - {fileID: 691495519}
+      - {fileID: 226700307}
+      - {fileID: 592943649}
+      - {fileID: 1402448731}
+      objectPrefab: {fileID: 5208508480913598201, guid: f50da6037bb5247419358d212e5933a3, type: 3}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 1
+      spawnTimeInterval: 0
       objectSpawnCountAtSameTime: 1
-      totalObjectSpawnCount: 0
+      totalObjectSpawnCount: 1
       spawnPositionList:
       - {fileID: 658565994216174946}
       - {fileID: 658565993817075405}
+      - {fileID: 1320556348}
+      - {fileID: 873831521}
+      objectPrefab: {fileID: 5544251630154843997, guid: a2a531f4a19b81f43bb70992df2a6a6a, type: 3}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 2
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
+      spawnPositionList:
+      - {fileID: 658565994014341873}
+      - {fileID: 658565993934182829}
+      - {fileID: 941148087}
+      - {fileID: 1173682665}
+      objectPrefab: {fileID: 3151571325878696028, guid: c06e185df61534640abe8366549e239c, type: 3}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 3
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 2
+      totalObjectSpawnCount: 2
+      spawnPositionList:
+      - {fileID: 658565993478603002}
+      - {fileID: 658565994421551026}
+      - {fileID: 1369633904}
+      - {fileID: 1385231336}
       objectPrefab: {fileID: 9048113276160138740, guid: 1f0e6a559c2fb5046b64e5db5d5a93ae, type: 3}
-  - stageSetLevel: 1
-    givenPlayerHp: 0
-    stageRange:
-      minStageLevel: 1
-      maxStageLevel: 5
-    enemySpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    oilSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    pillarSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    holeSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-  - stageSetLevel: 1
-    givenPlayerHp: 0
-    stageRange:
-      minStageLevel: 1
-      maxStageLevel: 5
-    enemySpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    oilSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    pillarSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    holeSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-  - stageSetLevel: 1
-    givenPlayerHp: 0
-    stageRange:
-      minStageLevel: 1
-      maxStageLevel: 5
-    enemySpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    oilSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    pillarSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
-    holeSpawnerSetting:
-      SPAWN_OBJECT_TYPE: 0
-      spawnTimeInterval: 0
-      objectSpawnCountAtSameTime: 0
-      totalObjectSpawnCount: 0
-      spawnPositionList: []
-      objectPrefab: {fileID: 0}
 --- !u!1 &658565994014341872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7112,7 +7647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658565994014341872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.8, y: 0, z: 0}
+  m_LocalPosition: {x: -35.8, y: 0, z: 45.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 658565993693506701}
@@ -7807,6 +8342,10 @@ Transform:
   - {fileID: 658565993618036567}
   - {fileID: 658565993435290068}
   - {fileID: 658565994706267916}
+  - {fileID: 691495519}
+  - {fileID: 226700307}
+  - {fileID: 592943649}
+  - {fileID: 1402448731}
   m_Father: {fileID: 658565994475599673}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7895,7 +8434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658565994421551029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.5, y: 2.3, z: -33.4}
+  m_LocalPosition: {x: -14.3, y: 2.3, z: -49.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 658565994623390838}
@@ -7964,6 +8503,10 @@ Transform:
   m_Children:
   - {fileID: 658565993478603002}
   - {fileID: 658565994421551026}
+  - {fileID: 932247841}
+  - {fileID: 679855194}
+  - {fileID: 1369633904}
+  - {fileID: 1385231336}
   m_Father: {fileID: 658565994475599673}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7996,6 +8539,8 @@ Transform:
   m_Children:
   - {fileID: 658565994216174946}
   - {fileID: 658565993817075405}
+  - {fileID: 1320556348}
+  - {fileID: 873831521}
   m_Father: {fileID: 658565994475599673}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

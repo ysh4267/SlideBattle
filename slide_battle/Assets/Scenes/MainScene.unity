@@ -173,6 +173,7 @@ MonoBehaviour:
   currentStatus: 0
   speedLimit: 50
   power: 100
+  PlayerSpawnPosition: {fileID: 0}
   curveSpeedDivider: 1
   explosionDelay: 5
 --- !u!4 &5184031 stripped
@@ -727,6 +728,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5238a436d0f53f345aa2abc8e36e818d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentStage:
+    stageSetLevel: 0
+    givenPlayerHp: 0
+    stageRange:
+      minStageLevel: 0
+      maxStageLevel: 0
+    enemySpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    oilSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    pillarSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+    holeSpawnerSetting:
+      SPAWN_OBJECT_TYPE: 0
+      spawnTimeInterval: 0
+      objectSpawnCountAtSameTime: 0
+      totalObjectSpawnCount: 0
+      spawnPositionList: []
+      objectPrefab: {fileID: 0}
+  objects: []
 --- !u!4 &1168386114
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,7 +1509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad29ee61c5de2f044b5ab5f7580eb464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: 0
 --- !u!4 &1327493499
 Transform:
   m_ObjectHideFlags: 0
