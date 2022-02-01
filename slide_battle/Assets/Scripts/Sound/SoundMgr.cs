@@ -41,20 +41,24 @@ public class SoundMgr : Singleton<SoundMgr>
 
     public void PlayHitSound()
     {
-        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitNormal");
+        EffectSound.clip = Resources.Load<AudioClip>("EffectSound/HitNormal");
         EffectSound.Play();
     }
     public void PlayHitMaxSound()
     {
-        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitMax");
+        EffectSound.clip = Resources.Load<AudioClip>("EffectSound/HitMax");
         EffectSound.Play();
     }
     public void PlayHitPillarSound()
     {
-        EffectSound.clip = Resources.Load<AudioClip>("Sound/HitPillar");
+        EffectSound.clip = Resources.Load<AudioClip>("EffectSound/HitPillar");
         EffectSound.Play();
     }
-
+    public void PlayCoinSound()
+    {
+        EffectSound.clip = Resources.Load<AudioClip>("EffectSound/CoinSound");
+        EffectSound.Play();
+    } 
     private void Update()
     {
         if (BgmToggle.isOn)

@@ -14,7 +14,7 @@ public class CoinSpawner : MonoBehaviour
 
     List<GameObject> coinList;
 
-    private void Start()
+    private void Awake()
     {
         coinList = new List<GameObject>();
     }

@@ -7,7 +7,6 @@ public class DataSaver : Singleton<DataSaver> {
     private int latestStage = 1;
     private int score = 0;
     private void Start() {
-        ResetAllData();
         InitializeCoinStatus();
         InitializeScoreStatus();
     }

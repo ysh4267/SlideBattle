@@ -7,9 +7,10 @@ public class Coin : MonoBehaviour
     [SerializeField] AudioClip coinGetSound;
     AudioSource audioSource;
     public float rotateSpeed;
-    private void Start()
+    private void Awake()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = coinGetSound;
     }
     private void FixedUpdate() {
         Vector3 rotation = gameObject.transform.eulerAngles;
@@ -28,6 +29,7 @@ public class Coin : MonoBehaviour
         if(other.gameObject.tag == "Player") {
             DataSaver.GetInstance().CollectCoin();
             InGameUI.GetInstance().UpdateCoinUI();
+            SoundMgr.GetInstance().PlayCoinSound();
             Destroy(gameObject);
         }
     }

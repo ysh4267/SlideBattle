@@ -64,6 +64,7 @@ public class StageManager : Singleton<StageManager>
 
     private void SetUpStage() {
         DestroyObjects();
+        
         coinSpawner.DestroyAndClearCoinList();
         DataSaver.GetInstance().LoadData();
         currentLevel = DataSaver.GetInstance().GetStage();
